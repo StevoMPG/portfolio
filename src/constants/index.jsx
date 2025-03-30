@@ -14,11 +14,11 @@ import {
   FaLinkedin
 } from "react-icons/fa";
 import { SiPostgresql } from "react-icons/si";
-import wis1 from '../assets/wis1.jpeg';
-import wis2 from '../assets/wis2.jpeg';
-import wis3 from '../assets/wis3.jpeg';
-import wis4 from '../assets/wis4.jpeg';
-import wis5 from '../assets/wis5.jpeg';
+import wis1 from '../assets/wis1.webp';
+import wis2 from '../assets/wis2.webp';
+import wis3 from '../assets/wis3.webp';
+import wis4 from '../assets/wis4.webp';
+import wis5 from '../assets/wis5.webp';
 
 export const technologiesConstants = {
   title: "Tecnologías",

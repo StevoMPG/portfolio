@@ -1,5 +1,5 @@
 import { RevealOnScroll } from "../RevealOnScroll";
-import photo from "../../assets/photo.jpeg";
+import photo from "../../assets/photo.webp";
 import { homeConstants } from "../../constants";
 
 export const Home = () => {
