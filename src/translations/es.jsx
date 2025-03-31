@@ -1,3 +1,9 @@
+import wis1 from '../assets/wis1.webp';
+import wis2 from '../assets/wis2.webp';
+import wis3 from '../assets/wis3.webp';
+import wis4 from '../assets/wis4.webp';
+import wis5 from '../assets/wis5.webp';
+
 export const es = {
     navbar: {
       home: "Inicio",
@@ -27,7 +33,7 @@ export const es = {
           degree: "Tecnólogo en Informática",
           institution: "UTEC",
           period: "(2021-2024)",
-          description: "Desarrollo de sistema interno y microservicios. Diseño de arquitectura de software para nuevos proyectos."
+          description: "El Título de Tecnólogo en Informática capacita a los profesionales con las habilidades necesarias para el desarrollo, implementación, mantenimiento y gestión de sistemas informáticos. Esto incluye conocimientos en programación, bases de datos, redes e ingeniería de software. El programa hace hincapié en la experiencia práctica y las habilidades para resolver problemas, preparando a los graduados para un campo dinámico y en constante evolución."
         }
       ],
       experience: [
@@ -90,7 +96,14 @@ export const es = {
           description: "Portal web de tipo multitenancy diseñado para satisfacer las necesidades de WIS en el ámbito de la gestión de almacenes. Este portal brinda acceso a un Sistema de Gestión de Almacenes (WMS) que permite a las organizaciones optimizar y controlar sus operaciones logísticas de manera eficiente.",
           technologies: ["React", "Axios", "ExpressJS", "Google Maps API", "PostgreSQL", "JWT", "CSS"],
           link: "",
-          linkText: "Proyecto privado."
+          linkText: "Proyecto privado.",
+          images: [
+            wis1,
+            wis2,
+            wis3,
+            wis4,
+            wis5
+          ]
         },
         {
           id: 2,

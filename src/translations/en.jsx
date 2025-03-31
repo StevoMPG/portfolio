@@ -1,3 +1,9 @@
+import wis1 from '../assets/wis1.webp';
+import wis2 from '../assets/wis2.webp';
+import wis3 from '../assets/wis3.webp';
+import wis4 from '../assets/wis4.webp';
+import wis5 from '../assets/wis5.webp';
+
 export const en = {
     navbar: {
       home: "Home",
@@ -27,7 +33,7 @@ export const en = {
           degree: "IT Technologist",
           institution: "UTEC",
           period: "(2021-2024)",
-          description: "Development of internal system and microservices. Software architecture design for new projects."
+          description: "The Technologist Degree in Information Technology equips professionals with the skills necessary for the development, implementation, maintenance, and management of computer systems. This includes knowledge in programming, databases, networks, and software engineering. The program emphasizes practical experience and problem-solving skills, preparing graduates for a dynamic and evolving field."
         }
       ],
       experience: [
@@ -90,7 +96,14 @@ export const en = {
           description: "Multi-tenant web portal designed to meet WIS's needs in the warehouse management field. This portal provides access to a Warehouse Management System (WMS) that allows organizations to optimize and control their logistics operations efficiently.",
           technologies: ["React", "Axios", "ExpressJS", "Google Maps API", "PostgreSQL", "JWT", "CSS"],
           link: "",
-          linkText: "Private project."
+          linkText: "Private project.",
+          images: [
+            wis1,
+            wis2,
+            wis3,
+            wis4,
+            wis5
+          ]
         },
         {
           id: 2,
