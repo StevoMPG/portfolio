@@ -14,7 +14,7 @@ export const Technologies = () => {
             whileInView={{opacity: 1, x: 0}}
             initial={{opacity: 0, x: 100}}
             transition={{duration: 1.5}}
-            className="text-2xl md:text-3xl bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent mb-4 text-center">
+            className="text-2xl md:text-3xl bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent mb-6 text-center">
             {t.technologies.title}
         </motion.h2>
         <div className="">

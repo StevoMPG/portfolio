@@ -18,7 +18,7 @@ export const Projects = () => {
                 whileInView={{opacity: 1, y: 0}}
                 initial={{opacity: 0, y: -50}}
                 transition={{duration: 1.2, ease: "easeOut"}}
-                className="text-2xl md:text-3xl bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent mb-8 text-center font-bold">
+                className="text-2xl md:text-3xl bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent mb-6 text-center">           
                 {t.projects.title}
             </motion.h2>
             
