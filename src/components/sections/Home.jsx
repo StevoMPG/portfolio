@@ -1,8 +1,11 @@
 import { RevealOnScroll } from "../RevealOnScroll";
 import photo from "../../assets/photo.webp";
+import { useTranslation } from "../../hooks/useTranslation";
 import { homeConstants } from "../../constants";
 
 export const Home = () => {
+  const { t } = useTranslation();
+  
   return (
     <section id="home" className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-20">
       <RevealOnScroll>
@@ -11,18 +14,18 @@ export const Home = () => {
             <div className="w-full flex justify-center mb-6">
               <img
                 src={photo}
-                alt={homeConstants.photoAlt}
+                alt={t.home.title}
                 className={homeConstants.photoClass}
               />
             </div>
             <h1 className={homeConstants.titleClass}>
-              {homeConstants.title}
+              {t.home.title}
             </h1>
             <h2 className={homeConstants.subtitleClass}>
-              {homeConstants.subtitle}
+              {t.home.subtitle}
             </h2>
             <p className={homeConstants.descriptionClass}>
-              {homeConstants.description}
+              {t.home.description}
             </p>
             
             <div className={homeConstants.socialContainerClass}>

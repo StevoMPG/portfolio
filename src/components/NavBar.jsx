@@ -1,9 +1,14 @@
 import { useEffect } from "react";
+import { useTranslation } from "../hooks/useTranslation";
+import { LanguageSwitcher } from "./LanguageSwitcher";
 
 export const Navbar = ({ menuOpen, setMenuOpen }) => {
+  const { t } = useTranslation();
+  
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "";
   }, [menuOpen]);
+  
   return (
     <nav className="fixed top-0 w-full z-40 bg-[rgba(10, 10, 10, 0.8)] backdrop-blur-lg border-b border-white/10 shadow-lg">
       <div className="max-w-5xl mx-auto px-4">
@@ -24,32 +29,33 @@ export const Navbar = ({ menuOpen, setMenuOpen }) => {
               href="#home"
               className="text-gray-300 hover:text-white transition-colors"
             >
-              Home
+              {t.navbar.home}
             </a>
             <a
               href="#technologies"
               className="text-gray-300 hover:text-white transition-colors"
             >
-              Tecnologías
+              {t.navbar.technologies}
             </a>
             <a
               href="#projects"
               className="text-gray-300 hover:text-white transition-colors"
             >
-              Proyectos
+              {t.navbar.projects}
             </a>
             <a
               href="#about"
               className="text-gray-300 hover:text-white transition-colors"
             >
-              Sobre mi
+              {t.navbar.about}
             </a>
             <a
               href="#contact"
               className="text-gray-300 hover:text-white transition-colors"
             >
-              Contacto
+              {t.navbar.contact}
             </a>
+            <LanguageSwitcher />
           </div>
         </div>
       </div>

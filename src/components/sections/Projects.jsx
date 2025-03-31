@@ -1,10 +1,10 @@
 import { RevealOnScroll } from "../RevealOnScroll";
 import { motion } from "framer-motion";
-import { projectsConstants } from "../../constants";
 import { ImageCarousel } from "../ImageCarousel";
+import { useTranslation } from "../../hooks/useTranslation";
 
 export const Projects = () => {
-  const { title, projects } = projectsConstants;
+  const { t } = useTranslation();
   
   return (
     <section
@@ -19,11 +19,11 @@ export const Projects = () => {
                 initial={{opacity: 0, y: -50}}
                 transition={{duration: 1.2, ease: "easeOut"}}
                 className="text-2xl md:text-3xl bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent mb-8 text-center font-bold">
-                {title}
+                {t.projects.title}
             </motion.h2>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {projects.map((project, index) => {
+              {t.projects.projects.map((project, index) => {
                 const isEven = index % 2 === 0;
                 const initialX = isEven ? -50 : 50;
                 

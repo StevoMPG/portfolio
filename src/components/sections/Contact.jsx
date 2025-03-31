@@ -2,9 +2,10 @@ import { useState } from "react";
 import { RevealOnScroll } from "../RevealOnScroll";
 import emailjs from "emailjs-com"; 
 import { motion } from "framer-motion";
-import { contactConstants } from "../../constants";
+import { useTranslation } from "../../hooks/useTranslation";
 
 export const Contact = () => {
+  const { t } = useTranslation();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -21,10 +22,10 @@ export const Contact = () => {
         e.target,
         import.meta.env.VITE_PUBLIC_KEY
       );
-      alert(contactConstants.successMessage);
+      alert(t.contact.successMessage);
       setFormData({ name: "", email: "", message: "" });
     } catch (error) {
-      alert(contactConstants.errorMessage);
+      alert(t.contact.errorMessage);
     }
   };
 
@@ -40,7 +41,7 @@ export const Contact = () => {
               initial={{opacity: 0, y: -50}}
               transition={{duration: 0.8}}
               className="text-2xl md:text-3xl bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent mb-6 text-center">
-              {contactConstants.title}
+              {t.contact.title}
           </motion.h2>
           
           <motion.form 
@@ -51,7 +52,7 @@ export const Contact = () => {
               className="space-y-6" 
               onSubmit={handleSubmit}>
             
-            {contactConstants.formFields.map((field) => (
+            {t.contact.formFields.map((field) => (
               <div key={field.id} className="relative">
                 {field.type === "textarea" ? (
                   <textarea
@@ -60,7 +61,7 @@ export const Contact = () => {
                     required={field.required}
                     rows={field.rows}
                     value={formData[field.id]}
-                    className={contactConstants.inputClass}
+                    className="w-full bg-neutral-900 rounded-md py-3 px-4 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
                     placeholder={field.placeholder}
                     onChange={(e) =>
                       setFormData({ ...formData, [field.id]: e.target.value })
@@ -73,7 +74,7 @@ export const Contact = () => {
                     name={field.id}
                     required={field.required}
                     value={formData[field.id]}
-                    className={contactConstants.inputClass}
+                    className="w-full bg-neutral-900 rounded-md py-3 px-4 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
                     placeholder={field.placeholder}
                     onChange={(e) =>
                       setFormData({ ...formData, [field.id]: e.target.value })
@@ -85,9 +86,9 @@ export const Contact = () => {
 
             <button
               type="submit"
-              className={contactConstants.submitButton.class}
+              className="w-full bg-gradient-to-r from-blue-600 to-blue-400 text-white py-3 px-6 rounded-md font-medium hover:from-blue-700 hover:to-blue-500 transition-all shadow-lg shadow-blue-500/20 hover:shadow-blue-500/40"
             >
-              {contactConstants.submitButton.text}
+              {t.contact.submitButton.text}
             </button>
           </motion.form>
         </RevealOnScroll>

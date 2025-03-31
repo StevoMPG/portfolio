@@ -1,6 +1,9 @@
-import { useEffect } from "react";
+import { useTranslation } from "../hooks/useTranslation";
+import { LanguageSwitcher } from "./LanguageSwitcher";
 
 export const MobileMenu = ({ menuOpen, setMenuOpen }) => {
+  const { t } = useTranslation();
+  
   return (
     <div
       className={`fixed top-0 left-0 w-full bg-[rgba(10,10,10,0.95)] z-40 flex flex-col items-center justify-center
@@ -34,7 +37,7 @@ export const MobileMenu = ({ menuOpen, setMenuOpen }) => {
                       }        
               `}
           >
-            Home
+            {t.navbar.home}
           </a>
           <a
             href="#technologies"
@@ -45,7 +48,7 @@ export const MobileMenu = ({ menuOpen, setMenuOpen }) => {
               }        
             `}
           >
-            Tecnologías
+            {t.navbar.technologies}
           </a>
           <a
             href="#projects"
@@ -56,7 +59,7 @@ export const MobileMenu = ({ menuOpen, setMenuOpen }) => {
               }        
             `}
           >
-            Proyectos
+            {t.navbar.projects}
           </a>
           <a
             href="#about"
@@ -67,7 +70,7 @@ export const MobileMenu = ({ menuOpen, setMenuOpen }) => {
               }        
             `}
           >
-            Sobre mi
+            {t.navbar.about}
           </a>
           <a
             href="#contact"
@@ -78,8 +81,16 @@ export const MobileMenu = ({ menuOpen, setMenuOpen }) => {
               }        
             `}
           >
-            Contacto
+            {t.navbar.contact}
           </a>
+          
+          <div className={`mt-4 transform transition-transform duration-300
+              ${
+                menuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
+              }`}
+          >
+            <LanguageSwitcher />
+          </div>
         </div>
       </div>
     </div>

@@ -1,9 +1,11 @@
 import { RevealOnScroll } from "../RevealOnScroll";
 import { motion } from "framer-motion";
-import { technologiesConstants } from "../../constants"; // Ajusta la ruta según tu estructura de archivos
+import { technologiesConstants } from "../../constants";
+import { useTranslation } from "../../hooks/useTranslation";
 
 export const Technologies = () => {
-  const { title, technologies, iconVariants } = technologiesConstants;
+  const { t } = useTranslation();
+  const { technologies, iconVariants } = technologiesConstants;
   
   return (
     <section id="technologies" className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-20">
@@ -13,7 +15,7 @@ export const Technologies = () => {
             initial={{opacity: 0, x: 100}}
             transition={{duration: 1.5}}
             className="text-2xl md:text-3xl bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent mb-4 text-center">
-            {title}
+            {t.technologies.title}
         </motion.h2>
         <div className="">
           <motion.div 

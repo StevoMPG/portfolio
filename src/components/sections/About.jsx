@@ -1,22 +1,9 @@
 import { RevealOnScroll } from "../RevealOnScroll";
 import { motion } from "framer-motion";
-import { aboutConstants } from "../../constants";
+import { useTranslation } from "../../hooks/useTranslation";
 
 export const About = () => {
-  const { 
-    title, 
-    description, 
-    toolsTitle,
-    toolsSkills,
-    methodologiesTitle,
-    methodologiesSkills,
-    otherSkillsTitle,
-    otherSkills,
-    educationTitle,
-    education,
-    experienceTitle,
-    experience
-  } = aboutConstants;
+  const { t } = useTranslation();
   
   return (
     <section
@@ -33,7 +20,7 @@ export const About = () => {
                 transition={{duration: 0.8, ease: "easeOut"}}
                 className="text-2xl md:text-3xl bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent inline-block"
               >
-                {title}
+                {t.about.title}
               </motion.h2>
             </div>
             
@@ -41,14 +28,14 @@ export const About = () => {
               className="rounded-xl p-8 border-white/10 border hover:-translate-y-1 transition-all"
             >
               <p className="text-gray-300 mb-6">
-                {description}
+                {t.about.description}
               </p>
               
               {/* Herramientas */}
               <div className="mb-6">
-                <h3 className="text-xl font-bold mb-4">{toolsTitle}</h3>
+                <h3 className="text-xl font-bold mb-4">{t.about.toolsTitle}</h3>
                 <div className="flex flex-wrap gap-2">
-                  {toolsSkills.map((tech, key) => (
+                  {t.about.toolsSkills.map((tech, key) => (
                     <span
                       key={key}
                       className="bg-blue-500/10 text-blue-500 py-1 px-3 rounded-full text-sm hover:bg-blue-500/20 
@@ -62,9 +49,9 @@ export const About = () => {
               
               {/* Metodologías */}
               <div className="mb-6">
-                <h3 className="text-xl font-bold mb-4">{methodologiesTitle}</h3>
+                <h3 className="text-xl font-bold mb-4">{t.about.methodologiesTitle}</h3>
                 <div className="flex flex-wrap gap-2">
-                  {methodologiesSkills.map((method, key) => (
+                  {t.about.methodologiesSkills.map((method, key) => (
                     <span
                       key={key}
                       className="bg-green-500/10 text-green-500 py-1 px-3 rounded-full text-sm hover:bg-green-500/20 
@@ -78,9 +65,9 @@ export const About = () => {
               
               {/* Otras Habilidades */}
               <div>
-                <h3 className="text-xl font-bold mb-4">{otherSkillsTitle}</h3>
+                <h3 className="text-xl font-bold mb-4">{t.about.otherSkillsTitle}</h3>
                 <div className="flex flex-wrap gap-2">
-                  {otherSkills.map((skill, key) => (
+                  {t.about.otherSkills.map((skill, key) => (
                     <span
                       key={key}
                       className="bg-purple-500/10 text-purple-500 py-1 px-3 rounded-full text-sm hover:bg-purple-500/20 
@@ -101,9 +88,9 @@ export const About = () => {
                 transition={{duration: 0.6, ease: "easeOut"}}
                 className="p-6 rounded-xl border-white/10 border hover:-translate-y-1 transition-all"
               >
-                <h3 className="text-xl font-bold mb-4">{educationTitle}</h3>
+                <h3 className="text-xl font-bold mb-4">{t.about.educationTitle}</h3>
                 <ul className="list-disc list-inside text-gray-300 space-y-2">
-                  {education.map((edu, index) => (
+                  {t.about.education.map((edu, index) => (
                     <div key={index}>
                       <strong>{edu.degree}</strong> - {edu.institution} {edu.period}
                       <p>
@@ -119,9 +106,9 @@ export const About = () => {
                 transition={{duration: 0.6, ease: "easeOut"}}
                 className="p-6 rounded-xl border-white/10 border hover:-translate-y-1 transition-all"
               >
-                <h3 className="text-xl font-bold mb-4">{experienceTitle}</h3>
+                <h3 className="text-xl font-bold mb-4">{t.about.experienceTitle}</h3>
                 <div className="space-y-4 text-gray-300">
-                  {experience.map((exp, index) => (
+                  {t.about.experience.map((exp, index) => (
                     <div key={index}>
                       <h3 className="text-lg font-bold mb-2">
                         {exp.position}
