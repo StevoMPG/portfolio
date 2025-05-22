@@ -10,31 +10,49 @@ import "./index.css";
 import { Contact } from "./components/sections/Contact";
 import { Technologies } from "./components/sections/Technologies";
 import { LanguageProvider } from "./contexts/LanguageContext";
+import { ThemeProvider } from "./contexts/ThemeContext";
+import { useTheme } from "./hooks/useTheme";
+import { AnimatedBackground } from "./components/AnimatedBackground";
 
-export default function App() { 
+const AppContent = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const { themeClasses } = useTheme();
 
   return (
-    <LanguageProvider>
-      <>
-        {!isLoaded && <LoadingScreen onComplete={() => setIsLoaded(true)} />}
-        <div
-          className={`min-h-screen w-full overflow-hidden transition-opacity duration-700 ${
-            isLoaded ? "opacity-100" : "opacity-0"
-          } bg-black text-gray-100`}
-        >
+    <>
+      {!isLoaded && <LoadingScreen onComplete={() => setIsLoaded(true)} />}
+      <div
+        className={`min-h-screen w-full overflow-hidden transition-all duration-700 ${
+          isLoaded ? "opacity-100" : "opacity-0"
+        } ${themeClasses.bg} ${themeClasses.text} relative`}
+      >
+        {/* Fondo animado */}
+        <AnimatedBackground />
+        
+        {/* Contenido principal */}
+        <div className="relative z-10">
           <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
           <MobileMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
-          <div className="w-full overflow-x-hidden">
+          <main className="w-full overflow-x-hidden">
             <Home />
             <Technologies />
             <Projects />
             <About />
             <Contact />
-          </div>
+          </main>
         </div>
-      </>
-    </LanguageProvider>
+      </div>
+    </>
   );
 };
+
+export default function App() {
+  return (
+    <ThemeProvider>
+      <LanguageProvider>
+        <AppContent />
+      </LanguageProvider>
+    </ThemeProvider>
+  );
+}

@@ -1,37 +1,57 @@
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 
-export const RevealOnScroll = ({ children }) => {
+export const RevealOnScroll = ({ children, delay = 0 }) => {
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef(null);
 
   useEffect(() => {
+    const currentRef = ref.current;
+    if (!currentRef) return;
+
     const observer = new IntersectionObserver(
       ([entry]) => {
-        // Solo activa "isVisible" al entrar, pero no lo desactiva al salir
-        if (entry.isIntersecting) {
+        if (entry.isIntersecting && !isVisible) {
           setIsVisible(true);
         }
       },
       {
-        threshold: 0.2, // Aumentamos el threshold para mayor seguridad
-        rootMargin: "0px 0px -50px 0px", // Área de detección extendida hacia abajo
+        threshold: 0.1,
+        rootMargin: "0px 0px -10% 0px",
       }
     );
 
-    if (ref.current) observer.observe(ref.current);
+    observer.observe(currentRef);
 
     return () => {
-      if (ref.current) observer.unobserve(ref.current);
+      if (currentRef) {
+        observer.unobserve(currentRef);
+      }
     };
-  }, []);
+  }, [isVisible]);
+
+  const variants = {
+    hidden: { 
+      opacity: 0, 
+      y: 50 
+    },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: {
+        duration: 0.8,
+        delay,
+        ease: "easeOut"
+      }
+    }
+  };
 
   return (
-    <div ref={ref} className="w-full"> {/* Removimos overflow-hidden */}
+    <div ref={ref} className="w-full">
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={isVisible ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.5 }}
+        initial="hidden"
+        animate={isVisible ? "visible" : "hidden"}
+        variants={variants}
       >
         {children}
       </motion.div>

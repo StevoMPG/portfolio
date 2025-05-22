@@ -1,46 +1,97 @@
 @import "tailwindcss";
 
+/* Variables CSS para temas optimizadas */
+:root {
+  --primary-gradient: linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%);
+  --glow-color: rgba(59, 130, 246, 0.3);
+}
+
+[data-theme="light"] {
+  --primary-gradient: linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%);
+  --glow-color: rgba(59, 130, 246, 0.2);
+}
+
+/* Reset y base optimizado */
 html,
 body {
   margin: 0;
   padding: 0;
   font-family: "Space Grotesk", sans-serif;
-  background: #0a0a0a;
-  color: #b8e2c1;
   overflow-x: hidden;
   position: relative;
   width: 100%;
+  scroll-behavior: smooth;
 }
 
+/* Scrollbar personalizado */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-gradient);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #2563eb 0%, #0891b2 100%);
+}
+
+/* Animaciones optimizadas */
 @layer utilities {
+  /* Animación de parpadeo simple */
   @keyframes blink {
-    0%,
-    100% {
-      opacity: 1;
-    }
-    50% {
-      opacity: 0;
-    }
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
   }
 
   .animate-blink {
-    animation: blink 0.8s step-end infinite;
+    animation: blink 1s ease-in-out infinite;
   }
 
+  /* Animación de carga simple */
   @keyframes loading {
-    0% {
-      transform: translateX(-100%);
-    }
-    100% {
-      transform: translateX(250%);
-    }
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
   }
 
   .animate-loading-bar {
-    animation: loading 0.8s ease infinite;
+    animation: loading 1.2s ease-in-out infinite;
+  }
+
+  /* Efectos flotantes simples */
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  /* Gradiente animado simplificado */
+  .animate-gradient-text {
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* Efectos de hover optimizados */
+  .hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-3px);
   }
 }
 
+/* Clases de utilidad para revelación en scroll */
 .reveal {
   opacity: 0;
   transform: translateY(20px);
@@ -50,4 +101,62 @@ body {
 .reveal.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Mejoras para accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Modo de alto contraste */
+@media (prefers-contrast: high) {
+  .glass-effect {
+    background: rgba(0, 0, 0, 0.9);
+    border: 2px solid #ffffff;
+  }
+}
+
+/* Mejoras para móviles */
+@media (max-width: 768px) {
+  .glass-effect {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+}
+
+/* Efectos de enfoque para accesibilidad */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* Optimizaciones de rendimiento */
+.gpu-acceleration {
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+/* Tipografía mejorada */
+.text-balance {
+  text-wrap: balance;
+}
+
+/* Efectos de selección de texto */
+::selection {
+  background: var(--primary-gradient);
+  color: white;
+}
+
+::-moz-selection {
+  background: var(--primary-gradient);
+  color: white;
 }

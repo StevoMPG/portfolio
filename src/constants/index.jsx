@@ -5,7 +5,6 @@ import {
   FaJava, 
   FaReact, 
   FaDatabase, 
-  FaAws, 
   FaDocker, 
   FaTools, 
   FaGit,
@@ -13,7 +12,17 @@ import {
   FaGithub, 
   FaLinkedin
 } from "react-icons/fa";
-import { SiPostgresql } from "react-icons/si";
+import { 
+  SiPostgresql,
+  SiTailwindcss,
+  SiVite,
+  SiJenkins,
+  SiSupabase,
+  SiCloudflare,
+  SiSpring,
+  SiHibernate,
+  SiJira
+} from "react-icons/si";
 
 export const technologiesConstants = {
   title: "Tecnologías",
@@ -32,15 +41,18 @@ export const technologiesConstants = {
   }),
   
   technologies: [
-    { name: "Java", icon: FaJava, color: "text-red-500", duration: 2.5 },
     { name: "React", icon: FaReact, color: "text-blue-500", duration: 6 },
-    { name: "AWS", icon: FaAws, color: "text-yellow-500", duration: 3 },
+    { name: "Java", icon: FaJava, color: "text-red-500", duration: 2.5 },
+    { name: "TailwindCSS", icon: SiTailwindcss, color: "text-teal-500", duration: 4 },
+    { name: "Vite.js", icon: SiVite, color: "text-purple-500", duration: 3 },
+    { name: "Jenkins", icon: SiJenkins, color: "text-blue-600", duration: 2 },
     { name: "Docker", icon: FaDocker, color: "text-blue-400", duration: 8 },
-    { name: "Jenkins", icon: FaTools, color: "text-red-400", duration: 2 },
+    { name: "Supabase", icon: SiSupabase, color: "text-green-500", duration: 5 },
+    { name: "Cloudflare", icon: SiCloudflare, color: "text-orange-500", duration: 7 },
+    { name: "Spring", icon: SiSpring, color: "text-green-600", duration: 4 },
     { name: "PostgreSQL", icon: SiPostgresql, color: "text-blue-400", duration: 4 },
-    { name: "DB2", icon: FaDatabase, color: "text-blue-600", duration: 5 },
+    { name: "JIRA", icon: SiJira, color: "text-blue-700", duration: 3 },
     { name: "Git", icon: FaGit, color: "text-orange-600", duration: 7 },
-    { name: "Linux", icon: FaLinux, color: "text-yellow-600", duration: 2.5 },
   ]
 };
 /////////////////////////////////////////////////////////////////////////////////////////////////
