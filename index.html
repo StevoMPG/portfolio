@@ -1,15 +1,30 @@
 <!DOCTYPE html>
-<html lang="es ES">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/portfolio/cv.svg" />
+
+    <!-- Google Fonts: preconnect + carga asíncrona para no bloquear render -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap"
+    />
+    <link
       href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap"
       rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
     />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <noscript>
+      <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
+    </noscript>
+
+    <!-- Preload hero image for faster LCP -->
+    <link rel="preload" as="image" href="/portfolio/assets/photo-Bz-YaX8Q.webp" />
     
     <!-- Metaetiquetas mejoradas para SEO -->
     <title>Steven Pereira | Desarrollador Full-Stack | Portfolio Profesional</title>
@@ -30,8 +45,8 @@
     
     <!-- Canonical URL -->
     <link rel="canonical" href="https://stevompg.github.io/portfolio/" />
-    <script type="module" crossorigin src="/portfolio/assets/index-B2YGsBWE.js"></script>
-    <link rel="stylesheet" crossorigin href="/portfolio/assets/index-Blw3nwtK.css">
+    <script type="module" crossorigin src="/portfolio/assets/index-DZ8pDl0c.js"></script>
+    <link rel="stylesheet" crossorigin href="/portfolio/assets/index-CSpNtto2.css">
   </head>
   <body>
     <div id="root"></div>
