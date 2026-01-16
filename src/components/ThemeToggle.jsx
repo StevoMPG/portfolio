@@ -5,29 +5,40 @@ import { FaSun, FaMoon } from 'react-icons/fa';
 
 export const ThemeToggle = () => {
   const { theme, toggleTheme, themeClasses } = useTheme();
-  
+
   return (
     <motion.button
       onClick={toggleTheme}
-      className={`relative h-8 w-16 rounded-full p-1 transition-all duration-300 ${themeClasses.bgTertiary} ${themeClasses.border} border flex items-center justify-between`}
+      className={`
+        relative h-10 w-20 rounded-full p-1
+        transition-all duration-300
+        ${theme === 'dark' ? 'bg-gray-800 border border-gray-700' : 'bg-slate-200 border border-slate-300'}
+        flex items-center
+        shadow-inner
+      `}
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
       aria-label="Toggle theme"
     >
-      {/* Fondo del track */}
-      <div className={`absolute inset-1 rounded-full bg-gradient-to-r ${themeClasses.accent} opacity-10`} />
-      
-      {/* Iconos fijos en posiciones */}
-      <div className="relative z-10 w-full h-full flex items-center justify-between px-2">
-        <FaSun className={`text-xs transition-colors duration-300 ${theme === 'light' ? 'text-yellow-500' : themeClasses.textMuted.replace('text-', 'text-')}`} />
-        <FaMoon className={`text-xs transition-colors duration-300 ${theme === 'dark' ? 'text-blue-400' : themeClasses.textMuted.replace('text-', 'text-')}`} />
+      {/* Iconos de fondo */}
+      <div className="absolute inset-0 flex items-center justify-between px-2.5">
+        <FaSun className={`text-sm transition-all duration-300 ${theme === 'light' ? 'text-amber-500' : 'text-gray-600'}`} />
+        <FaMoon className={`text-sm transition-all duration-300 ${theme === 'dark' ? 'text-blue-400' : 'text-slate-400'}`} />
       </div>
-      
+
       {/* Indicador deslizante */}
       <motion.div
-        className={`absolute h-6 w-6 rounded-full ${themeClasses.card} shadow-lg border ${themeClasses.border} flex items-center justify-center z-20`}
+        className={`
+          absolute h-8 w-8 rounded-full
+          flex items-center justify-center
+          shadow-lg
+          ${theme === 'dark'
+            ? 'bg-gradient-to-br from-blue-500 to-cyan-400'
+            : 'bg-gradient-to-br from-amber-400 to-orange-500'
+          }
+        `}
         animate={{
-          x: theme === 'dark' ? 24 : 4,
+          x: theme === 'dark' ? 42 : 2,
         }}
         transition={{
           type: "spring",
@@ -36,9 +47,9 @@ export const ThemeToggle = () => {
         }}
       >
         {theme === 'dark' ? (
-          <FaMoon className="text-blue-400 text-xs" />
+          <FaMoon className="text-white text-sm" />
         ) : (
-          <FaSun className="text-yellow-500 text-xs" />
+          <FaSun className="text-white text-sm" />
         )}
       </motion.div>
     </motion.button>

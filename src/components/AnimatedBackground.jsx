@@ -45,7 +45,7 @@ export const AnimatedBackground = () => {
         ctx.globalAlpha = this.opacity;
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-        ctx.fillStyle = theme === 'dark' ? '#3b82f6' : '#06b6d4';
+        ctx.fillStyle = theme === 'dark' ? '#3b82f6' : '#1e40af';
         ctx.fill();
         ctx.globalAlpha = 1;
       }
@@ -71,7 +71,7 @@ export const AnimatedBackground = () => {
           if (distance < 100) {
             const opacity = (1 - distance / 100) * 0.2;
             ctx.globalAlpha = opacity;
-            ctx.strokeStyle = theme === 'dark' ? '#3b82f6' : '#06b6d4';
+            ctx.strokeStyle = theme === 'dark' ? '#3b82f6' : '#1e40af';
             ctx.lineWidth = 0.5;
             ctx.beginPath();
             ctx.moveTo(particles[i].x, particles[i].y);
@@ -165,15 +165,15 @@ export const AnimatedBackground = () => {
           </>
         ) : (
           <>
-            {/* Fondo principal tema claro */}
-            <div className="absolute inset-0 bg-gray-800" />
-            
-            {/* Efectos de luz para tema claro */}
+            {/* Fondo principal tema claro - Blanco */}
+            <div className="absolute inset-0 bg-white" />
+
+            {/* Efectos de luz sutiles para tema claro */}
             <motion.div
-              className="absolute top-1/3 right-1/3 w-72 h-72 bg-blue-400/8 rounded-full blur-3xl"
+              className="absolute top-1/4 right-1/4 w-96 h-96 bg-blue-100 rounded-full blur-3xl"
               animate={{
-                scale: [1, 1.2, 1],
-                opacity: [0.3, 0.5, 0.3],
+                scale: [1, 1.1, 1],
+                opacity: [0.4, 0.6, 0.4],
               }}
               transition={{
                 duration: 12,
@@ -181,12 +181,12 @@ export const AnimatedBackground = () => {
                 ease: "easeInOut"
               }}
             />
-            
+
             <motion.div
-              className="absolute bottom-1/3 left-1/3 w-80 h-80 bg-cyan-400/6 rounded-full blur-3xl"
+              className="absolute bottom-1/4 left-1/4 w-80 h-80 bg-slate-100 rounded-full blur-3xl"
               animate={{
                 scale: [1.1, 1, 1.1],
-                opacity: [0.4, 0.6, 0.4],
+                opacity: [0.5, 0.7, 0.5],
               }}
               transition={{
                 duration: 9,

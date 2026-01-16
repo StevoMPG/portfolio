@@ -16,16 +16,10 @@ export const es = {
     brandExtension: ".dev"
   },
 
-  // Pantalla de carga
-  loading: {
-    brandName: "stevo",
-    brandExtension: ".dev"
-  },
-
   // Inicio
   home: {
     title: "Steven Pereira",
-    subtitle: "Arquitecto de Software Jr.",
+    subtitle: "Tecnólogo en Informática",
     description: "Especializado en el desarrollo de aplicaciones escalables y soluciones innovadoras. Con experiencia en tecnologías modernas y metodologías ágiles, me enfoco en crear sistemas robustos que resuelven problemas complejos de negocio, optimizando procesos y mejorando la experiencia del usuario.",
     socialLinks: {
       github: "GitHub",
@@ -36,7 +30,7 @@ export const es = {
   // Tecnologías
   technologies: {
     title: "Tecnologías & Herramientas",
-    subtitle: "Tecnologías que domino y utilizo en mis proyectos",
+    subtitle: "Tecnologías que he utilizado en mis años de experiencia profesional",
     items: {
       react: "React",
       java: "Java", 
@@ -61,18 +55,21 @@ export const es = {
   // Sobre mi
   about: {
     title: "Sobre mi",
-    description: "Arquitecto de software Jr apasionado con experiencia en la creación de aplicaciones escalables y soluciones innovadoras que resuelven problemas complejos de negocio.",
-    toolsTitle: "🛠️ Herramientas & Frameworks",
-    methodologiesTitle: "📋 Metodologías & Prácticas",
-    otherSkillsTitle: "🌟 Habilidades Adicionales",
-    educationTitle: "🎓 Información Académica",
-    experienceTitle: "💼 Experiencia Laboral",
+    description: "Tecnologo en Informática apasionado con experiencia en la creación de aplicaciones escalables y soluciones innovadoras que resuelven problemas complejos de negocio.",
+    toolsTitle: "Herramientas & Frameworks",
+    methodologiesTitle: "Metodologías & Prácticas",
+    otherSkillsTitle: "Habilidades Adicionales",
+    educationTitle: "Información Académica",
+    experienceTitle: "Experiencia Laboral",
+    currentJob: "Actual",
+    dragToExplore: "Arrastra para explorar",
+    swipeToSee: "Desliza para ver más",
     
     education: [
       {
         degree: "Tecnólogo en Informática",
         institution: "UTEC",
-        period: "(2021-2024)",
+        period: "2021-2024",
         description: "El Título de Tecnólogo en Informática capacita a los profesionales con las habilidades necesarias para el desarrollo, implementación, mantenimiento y gestión de sistemas informáticos. Esto incluye conocimientos en programación, bases de datos, redes e ingeniería de software. El programa hace hincapié en la experiencia práctica y las habilidades para resolver problemas, preparando a los graduados para un campo dinámico y en constante evolución."
       }
     ],
@@ -144,43 +141,6 @@ export const es = {
     ]
   },
 
-  // Proyectos
-  projects: {
-    title: "Proyectos Destacados",
-    subtitle: "Una muestra de mis trabajos más significativos",
-    viewProject: "Ver Proyecto →",
-    privateProject: "Proyecto Privado",
-    technologies: "Tecnologías utilizadas:",
-    
-    items: [
-      {
-        id: 1,
-        title: "WMS - Empresa WIS",
-        description: "Portal web de tipo multitenancy diseñado para satisfacer las necesidades de WIS en el ámbito de la gestión de almacenes. Este portal brinda acceso a un Sistema de Gestión de Almacenes (WMS) que permite a las organizaciones optimizar y controlar sus operaciones logísticas de manera eficiente.",
-        technologies: ["React", "Axios", "ExpressJS", "Google Maps API", "PostgreSQL", "JWT", "CSS"],
-        link: "",
-        linkText: "Proyecto privado.",
-        images: [wis1, wis2, wis3, wis4, wis5]
-      },
-      {
-        id: 2,
-        title: "Bungeeuy.com",
-        description: "Bungeeuy fue mi primer proyecto freelance, desarrollado como una plataforma de reservas online. El frontend fue construido con React 18, TailwindCSS 3 y Vite.js, mientras que el backend fue implementado completamente en Supabase (PostgreSQL y Deno). Se integraron APIs de Supabase y Mercado Pago (Checkout Pro) para gestionar autenticación, almacenamiento y pagos. El sistema permite al administrador iniciar sesión para gestionar agendas, crear paquetes y visualizar reservas. Los usuarios, sin necesidad de registrarse, pueden seleccionar fechas y horarios disponibles, completar sus datos y confirmar su turno mediante pago online. Al completarse la transacción, un webhook confirma la reserva y se envía un correo automático con un código único de confirmación.",
-        technologies: ["React 18", "TailwindCSS 3", "Vite.js", "Supabase", "PostgreSQL", "Deno", "Mercado Pago SDK", "Supabase SDK", "Cloudflare", "SEO Optimization"],
-        link: "https://www.bungeeuy.com",
-        linkText: "Ver Proyecto →"
-      },
-
-      {
-        id: 3,
-        title: "Entrenamos.uy",
-        description: "Este proyecto se implementó como un sistema distribuido. Existe un servidor central el cual almacena todos los datos de la plataforma y un servidor web el cual despliega el servicio desde una aplicación web. La comunicación entre el servidor central y el servidor web es a través de web services (SOAP). Adicionalmente, el servidor central contiene una interfaz gráfica hecha en Swing para realizar actividades de administración. También tiene como idea el aplicar conceptos de la orientación a objetos y diversas tecnologías.",
-        technologies: ["JAVA", "Maven", "JPA", "HTML", "JSP", "CSS", "JavaScript", "MySQL", "SOAP", "Swing"],
-        link: "https://github.com/StevoMPG/PAPLIC_LAB_FINAL",
-        linkText: "Ver Proyecto →"
-      }
-    ]
-  },
 
   // Contacto
   contact: {
@@ -229,6 +189,12 @@ export const es = {
   language: {
     spanish: "Español",
     english: "English"
+  },
+
+  // Configuración
+  settings: {
+    theme: "Tema",
+    language: "Idioma"
   },
 
   // Accesibilidad

@@ -125,6 +125,8 @@ export const ImageCarousel = ({ images }) => {
               <motion.img
                 src={img}
                 alt={`Project image ${index + 1}`}
+                loading="lazy"
+                decoding="async"
                 className="h-24 w-24 rounded-md cursor-pointer object-cover border border-gray-700 hover:border-blue-400 transition-all duration-300"
                 onClick={() => openImage(index)}
                 whileHover={{ scale: 1.05, transition: { duration: 0.3, ease: "easeOut" } }}
